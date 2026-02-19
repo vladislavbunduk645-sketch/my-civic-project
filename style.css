@@ -1,0 +1,149 @@
+:root {
+  --primary-blue: #3498db;
+  --accent-green: #00a859;
+  --bg-dark: #050505;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: white;
+  /* Анимированный глубокий фон */
+  background: linear-gradient(-45deg, #050505, #0a192f, #15002b, #050505);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Навигация */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li {
+  color: #888;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav ul li:hover {
+  color: var(--primary-blue);
+}
+
+.btn-login {
+  background: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Контент */
+.hero {
+  text-align: center;
+}
+
+.content-wrapper {
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 900;
+  margin: 20px 0;
+  line-height: 1.1;
+  text-shadow: 0 0 30px rgba(52, 152, 219, 0.3);
+}
+
+h1 span {
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: #aaa;
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Кнопки */
+.btn-main {
+  background: var(--accent-green);
+  color: white;
+  border: none;
+  padding: 16px 35px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0, 168, 89, 0.2);
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 168, 89, 0.4);
+}
+
+.link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  margin-left: 20px;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--primary-blue);
+}
+
+/* Изображение с анимацией */
+.image-container {
+  margin-top: 50px;
+  perspective: 1000px;
+}
+
+.car-img {
+  width: 85%;
+  max-width: 950px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(52, 152, 219, 0.15);
+  animation: carFloat 6s ease-in-out infinite;
+}
+
+@keyframes carFloat {
+  0%, 100% { transform: translateY(0) rotateX(2deg); }
+  50% { transform: translateY(-20px) rotateX(0deg); }
+}
